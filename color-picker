@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"></meta>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"></meta>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet"></link>
+    <title>Simple Color Picker</title>
+  </head>
+  <style>
+    .column {
+      border: 1px solid;
+      min-height: 400px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20%;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: transparent;
+    }
+
+    .form-label {
+      margin-top: 10px;
+    }
+
+    .heading {
+      color: red;
+      text-align: center;
+      margin: 5% auto;
+    }
+  </style>
+
+  <body>
+    <h1 class="heading">Simple Color Picker</h1>
+
+    <div class="column justify-content-md-center">
+      <div class="row justify-content-md-center">
+        <div class="main">
+          <label class="form-label">
+            Color Picker:
+            <input id="colorPicker" type="color" value="#00FA9A" />
+          </label>
+          <label class="form-label">
+            Hex Code: <input cl="" id="hexCode" type="text" value="#000000" />
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectColor() {
+        var selectedColor = document.getElementById("colorPicker").value;
+        document.querySelector(".column").style.backgroundColor = selectedColor;
+
+        document.getElementById("hexCode").value = selectedColor;
+      }
+      document
+        .getElementById("colorPicker")
+        .addEventListener("input", selectColor);
+    </script>
+  </body>
+</html>
